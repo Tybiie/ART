@@ -1,0 +1,1661 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gabie Page — Peintre & Artiviste | Studio Fine Art</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "bg-dark": "#0b0d0c",
+              "bg-card": "#121513",
+              "moss-dark": "#29352c",
+              "moss-green": "#4a5d4e",
+              "moss-accent": "#7a9a80",
+              "moss-light": "#a3bf8c",
+              "text-light": "#e8ebe8",
+              "text-muted": "#8e998f",
+              "border-dark": "#1e2420",
+              "accent-gold": "#c4a77d",
+            },
+            fontFamily: {
+              title: ["Cinzel", "serif"],
+              body: ["Space Grotesk", "sans-serif"],
+            },
+          },
+        },
+      };
+    </script>
+
+    <style>
+      body {
+        background-color: #0b0d0c;
+        color: #e8ebe8;
+        font-family: "Space Grotesk", sans-serif;
+        scroll-behavior: smooth;
+      }
+
+      ::-webkit-scrollbar {
+        height: 6px;
+        width: 6px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #0b0d0c;
+      }
+      ::-webkit-scrollbar-thumb {
+        background: #242c26;
+        border-radius: 3px;
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background: #4a5d4e;
+      }
+
+      .gallery-card-shadow {
+        box-shadow: 0 10px 30px -15px rgba(0, 0, 0, 0.8);
+      }
+      .gallery-card-shadow:hover {
+        box-shadow: 0 15px 35px -10px rgba(122, 154, 128, 0.12);
+      }
+
+      .backdrop-blur-header {
+        background: rgba(11, 13, 12, 0.92);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .hide-scrollbar::-webkit-scrollbar {
+        display: none;
+      }
+      .hide-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+      }
+    </style>
+  </head>
+  <body
+    class="bg-bg-dark text-text-light antialiased selection:bg-moss-green selection:text-white min-h-screen flex flex-col justify-between"
+  >
+    <!-- HEADER -->
+    <header
+      class="sticky top-0 z-40 border-b border-border-dark backdrop-blur-header transition-all duration-300"
+    >
+      <div
+        class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between"
+      >
+        <a href="#" class="group">
+          <span
+            class="font-title text-xl md:text-2xl font-bold tracking-widest text-text-light group-hover:text-moss-accent transition-colors block"
+            >GABIE PAGE</span
+          >
+          <span
+            class="text-[10px] font-semibold tracking-widest text-moss-accent uppercase block"
+            >Artiviste & Peintre</span
+          >
+        </a>
+
+        <!-- Navigation Links -->
+        <nav
+          class="hidden md:flex items-center space-x-8 text-xs tracking-widest uppercase"
+        >
+          <a
+            href="#demarche"
+            class="text-text-muted hover:text-text-light transition-colors py-1"
+            >Démarche</a
+          >
+          <a
+            href="#galerie"
+            class="text-text-muted hover:text-text-light transition-colors py-1"
+            >Œuvres</a
+          >
+          <a
+            href="#archives"
+            class="text-text-muted hover:text-text-light transition-colors py-1"
+            >Archives</a
+          >
+          <a
+            href="#ateliers"
+            class="text-text-muted hover:text-text-light transition-colors py-1"
+            >Ateliers</a
+          >
+          <a
+            href="#acquisition"
+            class="text-text-muted hover:text-text-light transition-colors py-1"
+            >Acquisition</a
+          >
+        </nav>
+
+        <!-- Instagram Contact CTA -->
+        <a
+          href="https://ig.me/m/gabiepagestudio"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 border border-moss-green/50 hover:border-moss-accent bg-moss-dark/30 hover:bg-moss-dark/80 text-xs font-semibold uppercase tracking-widest text-moss-accent rounded transition-all duration-300"
+        >
+          <svg class="w-3.5 h-3.5 fill-current" viewBox="0 0 24 24">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"
+            />
+          </svg>
+          <span>Écris-moi</span>
+        </a>
+      </div>
+    </header>
+
+    <main class="flex-grow">
+      <!-- HERO / DEMARCHE ARTISTIQUE -->
+      <section
+        id="demarche"
+        class="relative py-20 px-6 max-w-5xl mx-auto text-center"
+      >
+        <div
+          class="inline-block mb-4 px-3.5 py-1 rounded-full border border-moss-accent/30 bg-moss-green/10 text-moss-accent text-[11px] tracking-widest uppercase font-medium"
+        >
+          Trois-Rivières, Québec
+        </div>
+
+        <h1
+          class="font-title text-3xl sm:text-5xl md:text-6xl font-normal tracking-wide text-text-light mb-6 leading-tight"
+        >
+          Peinture & Art <br />
+          Intuitive
+        </h1>
+
+        <p
+          class="text-text-muted text-base md:text-lg max-w-3xl mx-auto font-light leading-relaxed mb-10"
+        >
+          Bienvenue dans mon studio ! Ici, toiles et matières sont trouvées en
+          friperies, dans la rue ou offertes, pour être métamorphosées par
+          l'application d’acrylique, d’huile, de pastels et plus encore. Une
+          rencontre entre l’abstrait brut et la figuration politique. J'aime
+          transformer des trouvailles en trésors.
+        </p>
+
+        <!-- Tags Artiviste -->
+        <div
+          class="flex flex-wrap justify-center gap-2 md:gap-3 max-w-2xl mx-auto"
+        >
+          <span
+            class="px-3 py-1.5 rounded-md border border-border-dark bg-bg-card text-xs text-moss-accent font-medium tracking-wider uppercase"
+            >Artiviste</span
+          >
+          <span
+            class="px-3 py-1.5 rounded-md border border-border-dark bg-bg-card text-xs text-moss-accent font-medium tracking-wider uppercase"
+            >"2SLGBTQIA+"</span
+          >
+          <span
+            class="px-3 py-1.5 rounded-md border border-border-dark bg-bg-card text-xs text-moss-accent font-medium tracking-wider uppercase"
+            >Trifluvienne</span
+          >
+          <span
+            class="px-3 py-1.5 rounded-md border border-border-dark bg-bg-card text-xs text-moss-accent font-medium tracking-wider uppercase"
+            >Création d'univers</span
+          >
+          <span
+            class="px-3 py-1.5 rounded-md border border-border-dark bg-bg-card text-xs text-moss-accent font-medium tracking-wider uppercase"
+            >Art Responsable</span
+          >
+        </div>
+      </section>
+
+      <!-- GALERIE D'ŒUVRES -->
+      <section id="galerie" class="py-12 px-6 max-w-7xl mx-auto">
+        <!-- Filter Bar -->
+        <div class="flex flex-wrap justify-center gap-3 mb-12">
+          <button
+            onclick="filterGallery('all')"
+            id="btn-all"
+            class="filter-btn px-5 py-2 rounded text-xs font-semibold tracking-widest uppercase border border-moss-accent bg-moss-green text-white transition-all duration-300"
+          >
+            Toutes les pièces
+          </button>
+          <button
+            onclick="filterGallery('stolen')"
+            id="btn-stolen"
+            class="filter-btn px-5 py-2 rounded text-xs font-semibold tracking-widest uppercase border border-border-dark bg-bg-card text-text-muted hover:text-text-light hover:border-moss-green transition-all duration-300"
+          >
+            Série « Stolen »
+          </button>
+          <button
+            onclick="filterGallery('demons')"
+            id="btn-demons"
+            class="filter-btn px-5 py-2 rounded text-xs font-semibold tracking-widest uppercase border border-border-dark bg-bg-card text-text-muted hover:text-text-light hover:border-moss-green transition-all duration-300"
+          >
+            Collection « Demons »
+          </button>
+          <button
+            onclick="filterGallery('upcoming')"
+            id="btn-upcoming"
+            class="filter-btn px-5 py-2 rounded text-xs font-semibold tracking-widest uppercase border border-border-dark bg-bg-card text-text-muted hover:text-text-light hover:border-moss-green transition-all duration-300"
+          >
+            À venir
+          </button>
+          <button
+            onclick="filterGallery('unavailable')"
+            id="btn-unavailable"
+            class="filter-btn px-5 py-2 rounded text-xs font-semibold tracking-widest uppercase border border-border-dark bg-bg-card text-text-muted hover:text-text-light hover:border-moss-green transition-all duration-300"
+          >
+            Non disponible
+          </button>
+        </div>
+
+        <!-- Artwork Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+          <!-- OEUVRE 01: RAGE -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="stolen"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/40"
+              onclick="
+                openLightbox('new collection/fckcolombus.webp', 'Rage — N° 01')
+              "
+            >
+              <img
+                src="new collection/fckcolombus.webp"
+                alt="Rage - Série Stolen"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                onerror="
+                  this.src =
+                    'https://placehold.co/800x1000/121513/7a9a80?text=Rage+(30x40)'
+                "
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-moss-accent/50 text-moss-accent text-[11px] font-semibold tracking-wider uppercase"
+                  >Original Disponible</span
+                >
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-60"
+              ></div>
+              <div
+                class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-dark/80 px-3 py-1.5 rounded text-xs text-text-light flex items-center gap-1 border border-border-dark"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+                <span>Agrandir</span>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-moss-accent uppercase mb-1"
+                >
+                  N° 01 — SÉRIE STOLEN
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-light mb-3"
+                >
+                  Rage
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Technique :</strong
+                    >
+                    Acrylique et technique mixte
+                  </div>
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Dimensions :</strong
+                    >
+                    30″ × 40″ (75 × 100 cm)
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6"
+                >
+                  Impact visuel brute pour dénoncer directement le colonialisme
+                  et les violences historiques.
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Prix d'acquisition</span
+                  >
+                  <span class="text-xl font-bold text-text-light font-title"
+                    >420 $ CAD</span
+                  >
+                </div>
+                <a
+                  href="https://ig.me/m/gabiepagestudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-5 py-2.5 bg-moss-green hover:bg-moss-accent text-white hover:text-bg-dark text-xs font-semibold uppercase tracking-widest rounded transition-colors duration-300"
+                >
+                  Acquérir via Insta →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- OEUVRE 02: BEAUTY -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="demons"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/40"
+              onclick="
+                openLightbox('new collection/demonhorn.webp', 'Beauty — N° 02')
+              "
+            >
+              <img
+                src="new collection/demonhorn.webp"
+                alt="Beauty - Collection Demons"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                onerror="
+                  this.src =
+                    'https://placehold.co/800x1000/121513/7a9a80?text=Beauty+(30x40)'
+                "
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-moss-accent/50 text-moss-accent text-[11px] font-semibold tracking-wider uppercase"
+                  >Original Disponible</span
+                >
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-60"
+              ></div>
+              <div
+                class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-dark/80 px-3 py-1.5 rounded text-xs text-text-light flex items-center gap-1 border border-border-dark"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+                <span>Agrandir</span>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-moss-accent uppercase mb-1"
+                >
+                  N° 02 — COLLECTION DEMONS
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-light mb-3"
+                >
+                  Beauty
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Technique :</strong
+                    >
+                    Huile, acrylique et pastels
+                  </div>
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Dimensions :</strong
+                    >
+                    30″ × 40″ (75 × 100 cm)
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6"
+                >
+                  Incarnation de la beauté brute résidant dans la vulnérabilité.
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Prix d'acquisition</span
+                  >
+                  <span class="text-xl font-bold text-text-light font-title"
+                    >480 $ CAD</span
+                  >
+                </div>
+                <a
+                  href="https://ig.me/m/gabiepagestudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-5 py-2.5 bg-moss-green hover:bg-moss-accent text-white hover:text-bg-dark text-xs font-semibold uppercase tracking-widest rounded transition-colors duration-300"
+                >
+                  Acquérir via Insta →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- OEUVRE 03: FALLEN -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="demons"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/40"
+              onclick="
+                openLightbox('new collection/fallen.webp', 'Fallen — N° 03')
+              "
+            >
+              <img
+                src="new collection/fallen.webp"
+                alt="Fallen - Collection Demons"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                onerror="
+                  this.src =
+                    'https://placehold.co/800x1000/121513/7a9a80?text=Fallen+(18x24)'
+                "
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-moss-accent/50 text-moss-accent text-[11px] font-semibold tracking-wider uppercase"
+                  >Original Disponible</span
+                >
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-60"
+              ></div>
+              <div
+                class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-dark/80 px-3 py-1.5 rounded text-xs text-text-light flex items-center gap-1 border border-border-dark"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+                <span>Agrandir</span>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-moss-accent uppercase mb-1"
+                >
+                  N° 03 — COLLECTION DEMONS
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-light mb-3"
+                >
+                  Fallen
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Technique :</strong
+                    >
+                    Acrylique, huile et pastels
+                  </div>
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Dimensions :</strong
+                    >
+                    18″ × 24″ (45 × 60 cm)
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6"
+                >
+                  En duo avec *Beauty*, cette œuvre explore la fracture
+                  intérieure et la remonté des croyances responsables de nos
+                  chutes sociales.
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Prix d'acquisition</span
+                  >
+                  <span class="text-xl font-bold text-text-light font-title"
+                    >350 $ CAD</span
+                  >
+                </div>
+                <a
+                  href="https://ig.me/m/gabiepagestudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-5 py-2.5 bg-moss-green hover:bg-moss-accent text-white hover:text-bg-dark text-xs font-semibold uppercase tracking-widest rounded transition-colors duration-300"
+                >
+                  Acquérir via Insta →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- OEUVRE 04: STOLEN -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="stolen"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/40"
+              onclick="
+                openLightbox('new collection/stolen.webp', 'Stolen — N° 04')
+              "
+            >
+              <img
+                src="new collection/stolen.webp"
+                alt="Stolen - Série Stolen"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                onerror="
+                  this.src =
+                    'https://placehold.co/800x1000/121513/7a9a80?text=Stolen+(24x36)'
+                "
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-moss-accent/50 text-moss-accent text-[11px] font-semibold tracking-wider uppercase"
+                  >Original Disponible</span
+                >
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-60"
+              ></div>
+              <div
+                class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-dark/80 px-3 py-1.5 rounded text-xs text-text-light flex items-center gap-1 border border-border-dark"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+                <span>Agrandir</span>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-moss-accent uppercase mb-1"
+                >
+                  N° 04 — SÉRIE STOLEN
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-light mb-3"
+                >
+                  Stolen
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Technique :</strong
+                    >
+                    Huile, pastel et acrylique sur toile
+                  </div>
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Dimensions :</strong
+                    >
+                    24″ × 36″ (60 × 90 cm)
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6"
+                >
+                  Une critique directe du colonialisme et du vol
+                  d’identité/ressources d'autres cultures d'ici à là-bas.
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Prix d'acquisition</span
+                  >
+                  <span class="text-xl font-bold text-text-light font-title"
+                    >390 $ CAD</span
+                  >
+                </div>
+                <a
+                  href="https://ig.me/m/gabiepagestudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-5 py-2.5 bg-moss-green hover:bg-moss-accent text-white hover:text-bg-dark text-xs font-semibold uppercase tracking-widest rounded transition-colors duration-300"
+                >
+                  Acquérir via Insta →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- OEUVRE 05: GROWING PAINS -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="demons"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/40 flex items-center justify-center"
+              onclick="
+                openLightbox(
+                  'new collection/growingpains.webp',
+                  'Growing Pains — N° 05',
+                )
+              "
+            >
+              <img
+                src="new collection/growingpains.webp"
+                alt="Growing pains"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-moss-accent/50 text-moss-accent text-[11px] font-semibold tracking-wider uppercase"
+                  >Original disponible</span
+                >
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-60"
+              ></div>
+              <div
+                class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-dark/80 px-3 py-1.5 rounded text-xs text-text-light flex items-center gap-1 border border-border-dark"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+                <span>Agrandir</span>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-moss-accent uppercase mb-1"
+                >
+                  N° 05 — Collection Demons
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-light mb-3"
+                >
+                  Growing Pains
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Technique :</strong
+                    >
+                    Technique mixte sur canvas recouvert de patrons
+                  </div>
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Dimensions :</strong
+                    >
+                    18″ × 24″ (45 × 60 cm)
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6"
+                >
+                  Création originale réalisée en direct lors du 4ᵉ anniversaire
+                  de la friperie
+                  <a
+                    href="https://www.instagram.com/labellesaison.friperie/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="text-moss-accent underline hover:text-text-light transition-colors"
+                    >La Belle Saison</a
+                  >
+                  à Trois-Rivières, où j'étais invitée à performer en tant
+                  qu'artiste peintre live.
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Prix d'acquisition</span
+                  >
+                  <span class="text-xl font-bold text-text-light font-title"
+                    >200$ CAD</span
+                  >
+                </div>
+                <a
+                  href="https://ig.me/m/gabiepagestudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-5 py-2.5 bg-moss-green hover:bg-moss-accent text-white hover:text-bg-dark text-xs font-semibold uppercase tracking-widest rounded transition-colors duration-300"
+                >
+                  Acquérir via Insta →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- OEUVRE 06: ELLE EST LA BLAgUE -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="demons"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/40 flex items-center justify-center"
+              onclick="
+                openLightbox(
+                  'ancienne collection/ellelablague.webp',
+                  'Elle est la blague — N° 06',
+                )
+              "
+            >
+              <img
+                src="ancienne collection/ellelablague.webp"
+                alt="Elle est la blague"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-moss-accent/50 text-moss-accent text-[11px] font-semibold tracking-wider uppercase"
+                  >Original disponible</span
+                >
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-60"
+              ></div>
+              <div
+                class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-dark/80 px-3 py-1.5 rounded text-xs text-text-light flex items-center gap-1 border border-border-dark"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+                <span>Agrandir</span>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-moss-accent uppercase mb-1"
+                >
+                  N° 06 — Collection Demons
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-light mb-3"
+                >
+                  Elle est la blague
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Technique :</strong
+                    >
+                    Acrylique
+                  </div>
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Dimensions :</strong
+                    >
+                    20″ × 30″ (50 × 76 cm)
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6"
+                >
+                  Née d'une composition en collage, cette œuvre met en scène le
+                  clown et le corps nu d'une femme. Elle représente la montée en
+                  puissance du masculinisme contemporain et le climat de
+                  violence systémique et globale qui l'accompagne sans n'être
+                  pour autant pris au sérieux. Dans cette composition, le motif
+                  du clown quitte le registre du divertissement pour devenir le
+                  miroir d'une mascarade toxique.
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Prix d'acquisition</span
+                  >
+                  <span class="text-xl font-bold text-text-light font-title"
+                    >400$ CAD</span
+                  >
+                </div>
+                <a
+                  href="https://ig.me/m/gabiepagestudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-5 py-2.5 bg-moss-green hover:bg-moss-accent text-white hover:text-bg-dark text-xs font-semibold uppercase tracking-widest rounded transition-colors duration-300"
+                >
+                  Acquérir via Insta →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- OEUVRE DISPONIBLE À VENIR 03 -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="upcoming"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/40 flex items-center justify-center"
+            >
+              <img
+                src="https://placehold.co/800x1000/121513/29352c?text=%C5Euvre+%C3%A0+venir"
+                alt="Œuvre disponible à venir 03"
+                class="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-105 opacity-80"
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-moss-accent/50 text-moss-accent text-[11px] font-semibold tracking-wider uppercase"
+                  >Disponible à venir</span
+                >
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-moss-accent uppercase mb-1"
+                >
+                  N° 07 — PROCHAINE PIÈCE
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-light mb-3"
+                >
+                  À venir
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Technique :</strong
+                    >
+                    Technique mixte sur canvas
+                  </div>
+                  <div>
+                    <strong class="text-text-light font-normal"
+                      >Dimensions :</strong
+                    >
+                    Dimensions à venir
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6"
+                >
+                  Nouvelle création en cours de réalisation à l'atelier.
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Prix d'acquisition</span
+                  >
+                  <span class="text-xl font-bold text-text-light font-title"
+                    >À venir</span
+                  >
+                </div>
+                <a
+                  href="https://ig.me/m/gabiepagestudio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="px-5 py-2.5 bg-moss-dark/60 hover:bg-moss-green text-text-light text-xs font-semibold uppercase tracking-widest rounded transition-colors duration-300 border border-border-dark"
+                >
+                  Réserver →
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- CASE EXEMPLE "PLUS DISPONIBLE" -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="unavailable"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/60"
+              onclick="
+                openLightbox(
+                  'ancienne collection/body.webp',
+                  'Her body, Her choice',
+                )
+              "
+            >
+              <img
+                src="ancienne collection/body.webp"
+                alt="Pièce d'Archive"
+                class="w-full h-full object-cover grayscale opacity-50 transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-red-900/50 text-red-400 text-[11px] font-semibold tracking-wider uppercase"
+                  >Non Disponible</span
+                >
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-80"
+              ></div>
+              <div
+                class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-dark/80 px-3 py-1.5 rounded text-xs text-text-light flex items-center gap-1 border border-border-dark"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+                <span>Agrandir</span>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-text-muted uppercase mb-1"
+                >
+                  N° 00 — ARCHIVE non-dispo
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-muted mb-3"
+                >
+                  Her body, Her choice
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-muted font-normal"
+                      >Technique :</strong
+                    >
+                    Technique mixte
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6 italic"
+                >
+                  Cette pièce n'est plus disponible sur le marché (VENDU,
+                  collection particulière, don à un organisme, commande spéciale
+                  ou conservée par l'artiste).
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Statut</span
+                  >
+                  <span
+                    class="text-sm font-semibold text-red-400/80 font-title uppercase"
+                    >VENDU</span
+                  >
+                </div>
+                <span
+                  class="text-xs text-text-muted/60 border border-border-dark px-3 py-1.5 rounded"
+                  >Non disponible</span
+                >
+              </div>
+            </div>
+          </div>
+
+          <!-- OEUVRE NON DISPONIBLE À REMPLIR 01 -->
+          <div
+            class="artwork-card group bg-bg-card border border-border-dark rounded-lg overflow-hidden gallery-card-shadow transition-all duration-500 flex flex-col"
+            data-category="unavailable"
+          >
+            <div
+              class="relative overflow-hidden cursor-pointer h-[460px] bg-black/60 flex items-center justify-center"
+              onclick="
+                openLightbox(
+                  'ancienne collection/boyzwillbeboyz.webp',
+                  'Boyz will be Boyz',
+                )
+              "
+            >
+              <img
+                src="ancienne collection/boyzwillbeboyz.webp"
+                alt="Pièce non disponible 01"
+                class="w-full h-full object-cover grayscale opacity-50 transition-transform duration-700 ease-out group-hover:scale-105"
+              />
+              <div class="absolute top-4 right-4 z-10">
+                <span
+                  class="px-3 py-1 rounded bg-bg-dark/90 backdrop-blur border border-red-900/50 text-red-400 text-[11px] font-semibold tracking-wider uppercase"
+                  >Non Disponible</span
+                >
+              </div>
+              <div
+                class="absolute inset-0 bg-gradient-to-t from-bg-card via-transparent to-transparent opacity-80"
+              ></div>
+              <div
+                class="absolute bottom-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-bg-dark/80 px-3 py-1.5 rounded text-xs text-text-light flex items-center gap-1 border border-border-dark"
+              >
+                <svg
+                  class="w-3.5 h-3.5"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0zM10 7v3m0 0v3m0-3h3m-3 0H7"
+                  />
+                </svg>
+                <span>Agrandir</span>
+              </div>
+            </div>
+
+            <div class="p-8 flex-grow flex flex-col justify-between">
+              <div>
+                <div
+                  class="text-xs font-semibold tracking-widest text-text-muted uppercase mb-1"
+                >
+                  N° 00 — ARCHIVE non-dispo
+                </div>
+                <h2
+                  class="font-title text-2xl font-semibold text-text-muted mb-3"
+                >
+                  Boyz will be boyz
+                </h2>
+
+                <div class="text-xs text-text-muted space-y-1 mb-4 font-mono">
+                  <div>
+                    <strong class="text-text-muted font-normal"
+                      >Technique :</strong
+                    >
+                    Technique mixte
+                  </div>
+                </div>
+
+                <p
+                  class="text-sm text-text-muted leading-relaxed font-light mb-6 italic"
+                >
+                  Cette pièce n'est plus disponible sur le marché (VENDU,
+                  collection particulière, don à un organisme, commande spéciale
+                  ou conservée par l'artiste).
+                </p>
+              </div>
+
+              <div
+                class="pt-6 border-t border-border-dark flex items-center justify-between"
+              >
+                <div>
+                  <span
+                    class="text-[10px] uppercase tracking-wider text-text-muted block"
+                    >Statut</span
+                  >
+                  <span
+                    class="text-sm font-semibold text-red-400/80 font-title uppercase"
+                    >VENDU</span
+                  >
+                </div>
+                <span
+                  class="text-xs text-text-muted/60 border border-border-dark px-3 py-1.5 rounded"
+                  >Non disponible</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION SLIDER ARCHIVES / ANCIENNES COLLECTIONS -->
+      <section
+        id="archives"
+        class="py-16 px-6 max-w-7xl mx-auto my-8 border-t border-border-dark"
+      >
+        <div
+          class="flex flex-col md:flex-row md:items-end justify-between mb-8 gap-4"
+        >
+          <div>
+            <span
+              class="text-xs font-semibold tracking-widest text-moss-accent uppercase block mb-1"
+              >Archives</span
+            >
+            <h2
+              class="font-title text-2xl md:text-3xl font-normal text-text-light"
+            >
+              Anciennes Oeuvres
+            </h2>
+          </div>
+
+          <!-- Controller arrows -->
+          <div class="flex items-center gap-2">
+            <button
+              onclick="scrollSlider(-340)"
+              class="w-10 h-10 rounded border border-border-dark bg-bg-card text-text-muted hover:text-text-light hover:border-moss-accent flex items-center justify-center transition-all"
+            >
+              ←
+            </button>
+            <button
+              onclick="scrollSlider(340)"
+              class="w-10 h-10 rounded border border-border-dark bg-bg-card text-text-muted hover:text-text-light hover:border-moss-accent flex items-center justify-center transition-all"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+        <!-- Horizontal Track -->
+        <div
+          id="archiveSlider"
+          class="flex gap-6 overflow-x-auto scroll-smooth hide-scrollbar pb-4"
+        >
+          <div
+            class="flex-none w-[280px] md:w-[320px] bg-bg-card border border-border-dark rounded overflow-hidden cursor-pointer group"
+            onclick="
+              openLightbox(
+                'ancienne collection/collage5.webp',
+                'Archive 01 — Collage',
+              )
+            "
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="ancienne collection/collage5.webp"
+                alt="Vue Atelier"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x600/121513/7a9a80?text=Atelier+Fallen'
+                "
+              />
+              <div
+                class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-bg-dark/80 px-2 py-1 rounded text-[10px] text-text-light border border-border-dark"
+              >
+                Agrandir
+              </div>
+            </div>
+            <div class="p-5">
+              <div
+                class="text-[10px] text-moss-accent uppercase tracking-widest mb-1"
+              >
+                01
+              </div>
+
+              <span
+                class="inline-block mt-3 text-[11px] text-moss-accent/80 font-mono"
+                >Collage</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="flex-none w-[280px] md:w-[320px] bg-bg-card border border-border-dark rounded overflow-hidden cursor-pointer group"
+            onclick="
+              openLightbox(
+                'ancienne collection/collage4.webp',
+                'Archive 02 — Collage',
+              )
+            "
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="ancienne collection/collage4.webp"
+                alt="Détails Matière"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x600/121513/7a9a80?text=Textures'
+                "
+              />
+              <div
+                class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-bg-dark/80 px-2 py-1 rounded text-[10px] text-text-light border border-border-dark"
+              >
+                Agrandir
+              </div>
+            </div>
+            <div class="p-5">
+              <div
+                class="text-[10px] text-moss-accent uppercase tracking-widest mb-1"
+              >
+                02
+              </div>
+
+              <span
+                class="inline-block mt-3 text-[11px] text-moss-accent/80 font-mono"
+                >Collage</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="flex-none w-[280px] md:w-[320px] bg-bg-card border border-border-dark rounded overflow-hidden cursor-pointer group"
+            onclick="
+              openLightbox(
+                'ancienne collection/collage3.webp',
+                'Archive 03 — Collage',
+              )
+            "
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="ancienne collection/collage3.webp"
+                alt="Rage profil"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+                onerror="
+                  this.src =
+                    'https://placehold.co/600x600/121513/7a9a80?text=Geste+Dripping'
+                "
+              />
+              <div
+                class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-bg-dark/80 px-2 py-1 rounded text-[10px] text-text-light border border-border-dark"
+              >
+                Agrandir
+              </div>
+            </div>
+            <div class="p-5">
+              <div
+                class="text-[10px] text-moss-accent uppercase tracking-widest mb-1"
+              >
+                03
+              </div>
+
+              <span
+                class="inline-block mt-3 text-[11px] text-moss-accent/80 font-mono"
+                >Collage</span
+              >
+            </div>
+          </div>
+
+          <div
+            class="flex-none w-[280px] md:w-[320px] bg-bg-card border border-border-dark rounded overflow-hidden cursor-pointer group"
+            onclick="
+              openLightbox(
+                'ancienne collection/collage2.webp',
+                'Archive 04 — Collage',
+              )
+            "
+          >
+            <div class="relative overflow-hidden">
+              <img
+                src="ancienne collection/collage2.webp"
+                alt="Ancienne toile"
+                class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-105"
+              />
+              <div
+                class="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity bg-bg-dark/80 px-2 py-1 rounded text-[10px] text-text-light border border-border-dark"
+              >
+                Agrandir
+              </div>
+            </div>
+            <div class="p-5">
+              <div
+                class="text-[10px] text-moss-accent uppercase tracking-widest mb-1"
+              >
+                04
+              </div>
+
+              <span
+                class="inline-block mt-3 text-[11px] text-moss-accent/80 font-mono"
+                >Collage</span
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION ATELIERS PRIVÉS -->
+      <section id="ateliers" class="py-20 px-6 max-w-5xl mx-auto my-12">
+        <div
+          class="bg-bg-card border border-border-dark rounded-xl p-8 md:p-14 text-center relative overflow-hidden gallery-card-shadow"
+        >
+          <div
+            class="absolute -top-24 -left-24 w-60 h-60 bg-moss-green/10 rounded-full blur-3xl pointer-events-none"
+          ></div>
+          <div
+            class="absolute -bottom-24 -right-24 w-60 h-60 bg-moss-accent/10 rounded-full blur-3xl pointer-events-none"
+          ></div>
+
+          <span
+            class="text-xs font-semibold tracking-widest text-moss-accent uppercase block mb-3"
+            >Expérience Guidée & Créativité</span
+          >
+          <h2
+            class="font-title text-3xl md:text-4xl font-normal text-text-light mb-6"
+          >
+            Initiation à l’Art Intuitif
+          </h2>
+
+          <p
+            class="text-text-muted text-base max-w-2xl mx-auto font-light leading-relaxed mb-8"
+          >
+            Ateliers privés individuels ou en petit groupe (durée : 1 heure).
+            Une expérience guidée pour débloquer la créativité, lâcher prise et
+            explorer la matière sans jugement ni attente académique. Écris-moi
+            ton nom, tes disponibilités ou celles des participants et on prend
+            rendez-vous ! Pour autres projets, vous pouvez me contacter ici.
+          </p>
+
+          <div
+            class="inline-flex flex-col sm:flex-row gap-4 items-center justify-center"
+          >
+            <a
+              href="mailto:gabiepagedesign@outlook.com?subject=Réservation%20Atelier%20Art%20Intuitif"
+              class="px-8 py-3.5 bg-moss-green hover:bg-moss-accent text-white hover:text-bg-dark text-xs font-semibold uppercase tracking-widest rounded transition-all duration-300"
+            >
+              Réserver un atelier privé (Mail) →
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER & CONDITIONS D'ACQUISITION -->
+    <footer
+      id="acquisition"
+      class="border-t border-border-dark bg-bg-card/50 pt-16 pb-12 px-6"
+    >
+      <div
+        class="max-w-4xl mx-auto mb-12 bg-bg-dark/90 border border-border-dark p-6 md:p-8 rounded-lg"
+      >
+        <h3
+          class="font-title text-lg font-semibold text-text-light mb-4 flex items-center gap-2"
+        >
+          <svg
+            class="w-4 h-4 text-moss-accent"
+            fill="none"
+            stroke="currentColor"
+            viewBox="0 0 24 24"
+          >
+            <path
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+            />
+          </svg>
+          Modalités d’Acquisition & Réservation
+        </h3>
+        <ul
+          class="text-sm text-text-muted space-y-3 font-light leading-relaxed"
+        >
+          <li class="flex items-start gap-2">
+            <span class="text-moss-accent font-bold">•</span>
+            <span
+              ><strong>Certificat d'authenticité :</strong> Chaque toile vient
+              avec son certificat d'authenticité officiel. Si tu as déjà acheté
+              une toile par le passé, ton certificat est ta preuve et te donne
+              droit à un <strong>rabais de 10%</strong> sur ton prochain achat
+              !</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-moss-accent font-bold">•</span>
+            <span
+              ><strong>Livraison & Pick-up :</strong> Toutes les toiles peuvent
+              être livrées ou postées (frais en sus selon le format et la
+              destination). La remise en main propre (pick-up) est aussi
+              disponible sur rendez-vous à Trois-Rivières.</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-moss-accent font-bold">•</span>
+            <span
+              ><strong>Dépôt obligatoire :</strong> Un dépôt est exigé pour
+              réserver et immobiliser définitivement une œuvre originale.</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-moss-accent font-bold">•</span>
+            <span
+              ><strong>Ententes de paiement :</strong> Possibilité d’échelonner
+              les versements sur demande par message privé ou courriel.</span
+            >
+          </li>
+          <li class="flex items-start gap-2">
+            <span class="text-moss-accent font-bold">•</span>
+            <span
+              ><strong>Prise de contact :</strong> Écris-moi directement sur
+              Instagram (<a
+                href="https://ig.me/m/gabiepagestudio"
+                target="_blank"
+                class="text-moss-accent underline hover:text-text-light"
+                >@gabiepagestudio</a
+              >) avec le numéro de l’œuvre souhaitée (ex. :
+              <em>N° 01</em>).</span
+            >
+          </li>
+        </ul>
+      </div>
+
+      <div
+        class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6 border-t border-border-dark/60 pt-8 text-xs text-text-muted"
+      >
+        <div>
+          © Gabie Page — Tous droits réservés. Basée à Trois-Rivières, QC.
+        </div>
+
+        <div class="flex flex-wrap justify-center items-center gap-6">
+          <a
+            href="https://instagram.com/gabiepagestudio"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-moss-accent transition-colors"
+            >Instagram Studio (@gabiepagestudio)</a
+          >
+          <a
+            href="https://instagram.com/gabiepage"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="hover:text-moss-accent transition-colors"
+            >Instagram Personnel (@gabiepage)</a
+          >
+          <a
+            href="mailto:gabiepagedesign@outlook.com"
+            class="hover:text-moss-accent transition-colors"
+            >gabiepagedesign@outlook.com</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <!-- LIGHTBOX MODAL -->
+    <div
+      id="lightbox"
+      class="fixed inset-0 z-50 bg-black/95 hidden items-center justify-center p-4 backdrop-blur-md"
+      onclick="closeLightbox()"
+    >
+      <div
+        class="relative max-w-5xl w-full max-h-[90vh] flex flex-col items-center justify-center"
+        onclick="event.stopPropagation()"
+      >
+        <button
+          onclick="closeLightbox()"
+          class="absolute -top-10 right-0 text-text-muted hover:text-text-light text-xs tracking-widest uppercase flex items-center gap-1"
+        >
+          <span>Fermer</span> ✕
+        </button>
+        <img
+          id="lightbox-img"
+          src=""
+          alt="Agrandissement Oeuvre"
+          class="max-h-[80vh] w-auto object-contain rounded border border-border-dark shadow-2xl"
+        />
+        <div
+          id="lightbox-caption"
+          class="mt-4 font-title text-base tracking-wider text-text-light"
+        ></div>
+      </div>
+    </div>
+
+    <!-- JAVASCRIPT LOGIC -->
+    <script>
+      // Gallery Filter Logic
+      function filterGallery(category) {
+        const cards = document.querySelectorAll(".artwork-card");
+        const btns = document.querySelectorAll(".filter-btn");
+
+        btns.forEach((btn) => {
+          btn.classList.remove(
+            "bg-moss-green",
+            "text-white",
+            "border-moss-accent",
+          );
+          btn.classList.add(
+            "bg-bg-card",
+            "text-text-muted",
+            "border-border-dark",
+          );
+        });
+
+        const activeBtn = document.getElementById(`btn-${category}`);
+        if (activeBtn) {
+          activeBtn.classList.remove(
+            "bg-bg-card",
+            "text-text-muted",
+            "border-border-dark",
+          );
+          activeBtn.classList.add(
+            "bg-moss-green",
+            "text-white",
+            "border-moss-accent",
+          );
+        }
+
+        cards.forEach((card) => {
+          const cat = card.getAttribute("data-category");
+          if (category === "all" || cat === category) {
+            card.style.display = "flex";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      }
+
+      // Horizontal Slider Scroll
+      function scrollSlider(distance) {
+        document.getElementById("archiveSlider").scrollBy({
+          left: distance,
+          behavior: "smooth",
+        });
+      }
+
+      // Lightbox Logic
+      function openLightbox(imgSrc, title) {
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const lightboxCaption = document.getElementById("lightbox-caption");
+
+        lightboxImg.src = imgSrc;
+        lightboxCaption.innerText = title;
+        lightbox.classList.remove("hidden");
+        lightbox.classList.add("flex");
+        document.body.style.overflow = "hidden";
+      }
+
+      function closeLightbox() {
+        const lightbox = document.getElementById("lightbox");
+        lightbox.classList.add("hidden");
+        lightbox.classList.remove("flex");
+        document.body.style.overflow = "auto";
+      }
+
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") closeLightbox();
+      });
+    </script>
+  </body>
+</html>
